@@ -18,11 +18,11 @@
             <button class="btn btn-menu d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#demo">
                 <i class="navbar-toggler-icon"></i>
             </button>
-        
+
             <a href="#" class="navbar-brand mx-2">
                 <img id="logo" src="./assets/snapps_logo.png" alt="Logo">
             </a>
-        
+
             <form class="search-bar d-flex mx-3 flex-grow-1">
                 <input class="form-control search-input" type="text"
                     placeholder="Search everything at Snapps online and in store">
@@ -30,7 +30,7 @@
                     <i class="fa fa-search"></i>
                 </button>
             </form>
-        
+
             <div class="cart-area align-items-center">
                 <i class="fa fa-shopping-cart cart-icon"></i>
                 <span class="cart-price">R$0.00</span>
@@ -38,33 +38,93 @@
         </nav>
 
         <!---->
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Dropdown button
+        <div class="dropdown d-none d-lg-flex justify-content-around gap-3">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                aria-expanded="false"> Eletrodomésticos
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="#">Micro-ondas</a></li>
+                <li><a class="dropdown-item" href="#">Geladeira</a></li>
+                <li><a class="dropdown-item" href="#">Lava-louças</a></li>
+            </ul>
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Celular & Smartphone
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Samsung</a></li>
+                <li><a class="dropdown-item" href="#">Iphone</a></li>
+                <li><a class="dropdown-item" href="#">Motorola</a></li>
+            </ul>
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Hardware
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Computador Gamer montado</a></li>
+                <li><a class="dropdown-item" href="#">Peças para Computador</a></li>
+                <li><a class="dropdown-item" href="#">Video Games</a></li>
             </ul>
         </div>
 
 
         <!--Off Canvas-->
-        <div class="offcanvas offcanvas-start offcanvas-lg" id="demo">
+        <div class="offcanvas offcanvas-start offcanvas-lg" tabindex="-1" id="demo">
             <div class="offcanvas-header">
-                <h1 class="offcanvas-title">Heading</h1>
+                <img id="logo" src="./assets/snapps_logo.png" alt="Logo">   
+                <div class="cart-area align-items-center justify-content-end">
+                    <i class="fa fa-shopping-cart cart-icon"></i>
+                    <span class="cart-price">R$0.00</span>
+                </div>             
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
             </div>
+
             <div class="offcanvas-body">
-                <p>Some text lorem ipsum.</p>
-                <p>Some text lorem ipsum.</p>
-                <p>Some text lorem ipsum.</p>
-                <button class="btn btn-secondary" type="button">A Button</button>
+
+                <!-- MENU VERTICAL COM SUBMENUS -->
+                <ul class="list-group list-group-flush">
+
+                    <!-- Eletrodomésticos -->
+                    <li class="list-group-item menu-item">
+                        <a class="menu-link" data-bs-toggle="collapse" href="#subEletro">
+                            Eletrodomésticos
+                        </a>
+                        <ul class="collapse submenu" id="subEletro">
+                            <li><a href="#" class="submenu-item">Micro-ondas</a></li>
+                            <li><a href="#" class="submenu-item">Geladeira</a></li>
+                            <li><a href="#" class="submenu-item">Lava-louças</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Celular -->
+                    <li class="list-group-item menu-item">
+                        <a class="menu-link" data-bs-toggle="collapse" href="#subCel">
+                            Celular & Smartphone
+                        </a>
+                        <ul class="collapse submenu" id="subCel">
+                            <li><a href="#" class="submenu-item">Samsung</a></li>
+                            <li><a href="#" class="submenu-item">iPhone</a></li>
+                            <li><a href="#" class="submenu-item">Motorola</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Hardware -->
+                    <li class="list-group-item menu-item">
+                        <a class="menu-link" data-bs-toggle="collapse" href="#subHard">
+                            Hardware
+                        </a>
+                        <ul class="collapse submenu" id="subHard">
+                            <li><a href="#" class="submenu-item">Computador Gamer montado</a></li>
+                            <li><a href="#" class="submenu-item">Peças para Computador</a></li>
+                            <li><a href="#" class="submenu-item">Videogames</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
             </div>
         </div>
         <!--Off Canvas-->
+
     </header>
     <main class="container">
         <section class="container">
