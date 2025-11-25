@@ -8,6 +8,7 @@
 header,
 footer {
 
+
     justify-content: center;
     align-items: center;
     background-color: var(--color2);
@@ -84,7 +85,7 @@ footer {
     border: 1px solid black;
 }
 
-.offcanvas-header{
+.offcanvas-header {
     background-color: var(--color2);
 }
 
@@ -133,6 +134,41 @@ footer {
     transition: 0.2s;
 }
 
+
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: var(--color1);
+}
+
+
+footer {
+    margin-top: 24px;
+}
+
+footer a:hover {
+    color: var(--color4) !important;
+    transition: 0.2s ease-in-out;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
 
 @media (max-width: 576px) {
     #logo {
