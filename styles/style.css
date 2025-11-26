@@ -140,7 +140,9 @@ footer {
     transition: 0.2s;
 }
 
-
+.card{
+    border: 2px solid black;
+}
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
