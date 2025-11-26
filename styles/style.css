@@ -78,10 +78,16 @@ footer {
 }
 
 .dropdown {
-    padding-bottom: 10px;
+    background-color: var(--color1);
 }
 
 .dropdown-toggle {
+    line-height: 2em;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.dropdown-toggle:hover{
     border: 1px solid black;
 }
 
@@ -136,7 +142,6 @@ footer {
 
 
 
-
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     filter: invert(1);
@@ -156,18 +161,8 @@ footer a:hover {
     transition: 0.2s ease-in-out;
 }
 
-html,
-body {
-    height: 100%;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    flex: 1;
+.nowrap{
+    flex-wrap: nowrap;
 }
 
 @media (max-width: 576px) {
