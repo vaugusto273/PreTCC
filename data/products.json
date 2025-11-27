@@ -1,0 +1,15 @@
+[
+	{ "id": 0, "name": "Produto 1", "price": 199.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" },
+	{ "id": 1, "name": "Produto 2", "price": 299.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" },
+	{ "id": 2, "name": "Produto 3", "price": 399.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" },
+	{ "id": 3, "name": "Produto 4", "price": 499.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" },
+	{ "id": 4, "name": "Produto 5", "price": 599.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" },
+	{ "id": 5, "name": "Produto 6", "price": 699.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" },
+	{ "id": 6, "name": "Produto 7", "price": 799.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" },
+    { "id": 7, "name": "Produto 8", "price": 799.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" },
+    { "id": 8, "name": "Produto 9", "price": 799.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" },
+    { "id": 9, "name": "Produto 10", "price": 799.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" },
+    { "id": 10, "name": "Produto 11", "price": 799.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" },
+    { "id": 11, "name": "Produto 12", "price": 799.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" },
+	{ "id": 12, "name": "Produto 13", "price": 899.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" }
+]

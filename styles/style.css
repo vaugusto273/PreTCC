@@ -87,7 +87,7 @@ footer {
     font-size: 0.9em;
 }
 
-.dropdown-toggle:hover{
+.dropdown-toggle:hover {
     border: 1px solid black;
 }
 
@@ -140,17 +140,86 @@ footer {
     transition: 0.2s;
 }
 
-.card{
-    border: 2px solid black;
+.carousel-container {
+    position: relative;
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    filter: invert(1);
+/* faixa horizontal */
+.carousel-wrapper {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 0.5rem 2.5rem 0.75rem;
+    scrollbar-width: none;
 }
 
-.carousel-indicators [data-bs-target] {
-    background-color: var(--color1);
+.carousel-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+/* card */
+.product-card {
+    flex: 0 0 80%;
+    /* mobile: 1 por vez */
+    max-width: 80%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform .2s, box-shadow .2s;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+}
+
+.product-card h3 {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}
+
+.price {
+    font-weight: bold;
+    color: var(--color1);
+}
+
+/* botões ❮ ❯ */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 999px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.25rem;
+    z-index: 2;
+}
+
+.carousel-btn.prev {
+    left: 0;
+}
+
+.carousel-btn.next {
+    right: 0;
+}
+
+.carousel-btn:hover {
+    background: #f0f0f0;
 }
 
 
@@ -163,13 +232,14 @@ footer a:hover {
     transition: 0.2s ease-in-out;
 }
 
-.nowrap{
-    flex-wrap: nowrap;
-}
-
 @media (max-width: 576px) {
     #logo {
         height: 35px;
+    }
+
+    .product-card {
+        flex: 0 0 75%;
+        max-width: 75%;
     }
 
     .search-bar {
@@ -184,5 +254,21 @@ footer a:hover {
 
     .navbar {
         width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .product-card {
+        flex: 0 0 30%;
+        /* 3 cards */
+        max-width: 30%;
+    }
+}
+
+@media (min-width: 992px) {
+    .product-card {
+        flex: 0 0 22%;
+        /* 4 cards */
+        max-width: 22%;
     }
 }
