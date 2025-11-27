@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	let products = [];          // vai guardar os produtos carregados do JSON
 	let nextProductIndex = 0;   // controla qual produto vem a seguir quando formos "ciclando"
-    let previousProductIndex = 0;
 	let isAppending = false;    // trava pra não disparar várias vezes seguidas
 
 	// Cria um card de produto (reutilizável)
@@ -39,18 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	}
 
-    function appendPreviousCards(quantity){
-        if (!products.length) return;
-
-        for(let i = 0; i < quantity; i++){
-            const product = products[nextProductIndex];
-            const card = createProductCard(product);
-            carouselWrapper.prepend(card);
-
-            nextProductIndex = (nextProductIndex - 1 + products.length) % products.length;
-
-        }
-    }
 	// Configura o "infinite scroll": quando chegar perto do fim, gera mais cards
 	function setupInfiniteScroll() {
 		carouselWrapper.addEventListener("scroll", () => {
