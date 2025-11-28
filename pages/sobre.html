@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snapps - Sobre nós</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon" />
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="container-fluid" id="v-navbar">
+        <nav class="navbar navbar-expand-lg navbar-snapps px-3">
+            <!-- Botão menu (mobile) -->
+            <button class="btn btn-menu d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Logo -->
+            <a href="../index.html" class="navbar-brand mx-2">
+                <img id="logo" src="../assets/snapps_logo.png" alt="Logo">
+            </a>
+
+            <!-- Busca -->
+            <form class="search-bar d-flex mx-3 flex-grow-1">
+                <input class="form-control search-input" type="text"
+                    placeholder="Search everything at Snapps online and in store">
+                <button class="btn btn-search" type="button">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+
+            <!-- Carrinho -->
+            <button class="btn cart-btn d-flex flex-column align-items-center position-relative cart-btn-trigger"
+                type="button">
+                <div class="position-relative">
+                    <i class="fa fa-shopping-cart cart-icon"></i>
+                    <span class="cart-badge cart-count d-none">0</span>
+                </div>
+                <span class="cart-price cart-price-text small mt-1">R$ 0,00</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Barra de categorias (desktop) -->
+    <div class="categories-bar d-none d-lg-block dropdown">
+        <div class="container d-flex justify-content-center gap-5">
+
+            <!-- Eletrodomésticos -->
+            <div class="dropdown">
+                <button class="btn category-btn dropdown-toggle" type="button" id="catEletro" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Eletrodomésticos
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="catEletro">
+                    <li><a class="dropdown-item" href="#">Micro-ondas</a></li>
+                    <li><a class="dropdown-item" href="#">Geladeira</a></li>
+                    <li><a class="dropdown-item" href="#">Lava-louças</a></li>
+                </ul>
+            </div>
+
+            <!-- Celular & Smartphone -->
+            <div class="dropdown">
+                <button class="btn category-btn dropdown-toggle" type="button" id="catCel" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Celular & Smartphone
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="catCel">
+                    <li><a class="dropdown-item" href="#">Samsung</a></li>
+                    <li><a class="dropdown-item" href="#">iPhone</a></li>
+                    <li><a class="dropdown-item" href="#">Motorola</a></li>
+                </ul>
+            </div>
+
+            <!-- Hardware -->
+            <div class="dropdown">
+                <button class="btn category-btn dropdown-toggle" type="button" id="catHard" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Hardware
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="catHard">
+                    <li><a class="dropdown-item" href="#">Computador Gamer montado</a></li>
+                    <li><a class="dropdown-item" href="#">Peças para Computador</a></li>
+                    <li><a class="dropdown-item" href="#">Video Games</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Offcanvas (menu mobile) -->
+    <div class="offcanvas offcanvas-start offcanvas-lg" tabindex="-1" id="demo">
+        <div class="offcanvas-header">
+            <img id="logo" src="./assets/snapps_logo.png" alt="Logo">
+            <button class="btn cart-btn d-flex flex-column align-items-center position-relative cart-btn-trigger"
+                type="button">
+                <div class="position-relative">
+                    <i class="fa fa-shopping-cart cart-icon"></i>
+                    <span class="cart-badge cart-count d-none">0</span>
+                </div>
+                <span class="cart-price cart-price-text small mt-1">R$ 0,00</span>
+            </button>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+
+        <div class="offcanvas-body">
+            <ul class="list-group list-group-flush">
+                <!-- Eletrodomésticos -->
+                <li class="list-group-item menu-item">
+                    <a class="menu-link" data-bs-toggle="collapse" href="#subEletro">
+                        Eletrodomésticos
+                    </a>
+                    <ul class="collapse submenu" id="subEletro">
+                        <li><a href="#" class="submenu-item">Micro-ondas</a></li>
+                        <li><a href="#" class="submenu-item">Geladeira</a></li>
+                        <li><a href="#" class="submenu-item">Lava-louças</a></li>
+                    </ul>
+                </li>
+
+                <!-- Celular -->
+                <li class="list-group-item menu-item">
+                    <a class="menu-link" data-bs-toggle="collapse" href="#subCel">
+                        Celular & Smartphone
+                    </a>
+                    <ul class="collapse submenu" id="subCel">
+                        <li><a href="#" class="submenu-item">Samsung</a></li>
+                        <li><a href="#" class="submenu-item">iPhone</a></li>
+                        <li><a href="#" class="submenu-item">Motorola</a></li>
+                    </ul>
+                </li>
+
+                <!-- Hardware -->
+                <li class="list-group-item menu-item">
+                    <a class="menu-link" data-bs-toggle="collapse" href="#subHard">
+                        Hardware
+                    </a>
+                    <ul class="collapse submenu" id="subHard">
+                        <li><a href="#" class="submenu-item">Computador Gamer montado</a></li>
+                        <li><a href="#" class="submenu-item">Peças para Computador</a></li>
+                        <li><a href="#" class="submenu-item">Videogames</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- MAIN - SOBRE A SNAPPS -->
+    <main class="container my-5 about-snapps">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Sobre a Snapps</li>
+            </ol>
+        </nav>
+
+        <!-- Hero / Cabeçalho -->
+        <section class="row align-items-center mb-5">
+            <div class="col-md-6 mb-4 mb-md-0">
+                <h1 class="display-5 fw-bold mb-3">Sobre a Snapps</h1>
+                <p class="lead mb-2">
+                    Variedade e praticidade, em um estalar de dedos.
+                </p>
+                <p>
+                    A Snapps nasceu do sonho de tornar as compras online mais simples, acessíveis
+                    e confiáveis. Com tecnologia, inovação e foco no cliente, somos uma plataforma
+                    de e-commerce que une praticidade, qualidade e atendimento humanizado,
+                    oferecendo desde eletrodomésticos até smartphones e hardware gamer.
+                </p>
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="./assets/snapps_warehouse.jpg" alt="Centro de distribuição Snapps"
+                    class="img-fluid rounded-4 shadow-sm">
+            </div>
+        </section>
+
+        <!-- Missão, Visão, Valores -->
+        <section class="mb-5">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h2 class="h4 mb-3 text-snapps-primary">Missão</h2>
+                            <p class="mb-0">
+                                Proporcionar aos clientes uma experiência de compra acessível, moderna e eficiente,
+                                unindo tecnologia, segurança e atendimento próximo, em todos os canais.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h2 class="h4 mb-3 text-snapps-primary">Visão</h2>
+                            <p class="mb-0">
+                                Ser referência em e-commerce no Brasil, reconhecida pela inovação,
+                                confiabilidade e pela forma como simplifica o dia a dia das pessoas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h2 class="h4 mb-3 text-snapps-primary">Valores</h2>
+                            <ul class="mb-0">
+                                <li>Transparência com clientes e parceiros;</li>
+                                <li>Comprometimento e responsabilidade;</li>
+                                <li>Inovação constante;</li>
+                                <li>Sustentabilidade e respeito ao meio ambiente;</li>
+                                <li>Foco total na experiência do cliente.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nossa equipe -->
+        <section class="mb-5">
+            <h2 class="h3 mb-4">Quem está por trás da Snapps</h2>
+            <p class="mb-4">
+                A Snapps foi idealizada por um time multidisciplinar, apaixonado por tecnologia
+                e varejo. Juntos, unimos competências em gestão, desenvolvimento, atendimento
+                e logística para criar uma experiência de compra completa.
+            </p>
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="card border-0 text-center h-100 shadow-sm">
+                        <img src="./assets/team/igor.jpg" class="card-img-top rounded-circle p-3" alt="Foto de Igor">
+                        <div class="card-body pt-0">
+                            <h3 class="h6 mb-0">Igor</h3>
+                            <p class="text-muted small mb-0">Co-fundador</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="card border-0 text-center h-100 shadow-sm">
+                        <img src="./assets/team/larissa.jpg" class="card-img-top rounded-circle p-3"
+                            alt="Foto de Larissa">
+                        <div class="card-body pt-0">
+                            <h3 class="h6 mb-0">Larissa</h3>
+                            <p class="text-muted small mb-0">Co-fundadora</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="card border-0 text-center h-100 shadow-sm">
+                        <img src="./assets/team/sara.jpg" class="card-img-top rounded-circle p-3" alt="Foto de Sara">
+                        <div class="card-body pt-0">
+                            <h3 class="h6 mb-0">Sara</h3>
+                            <p class="text-muted small mb-0">Co-fundadora</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <div class="card border-0 text-center h-100 shadow-sm">
+                        <img src="./assets/team/gabriel.jpg" class="card-img-top rounded-circle p-3"
+                            alt="Foto de Gabriel">
+                        <div class="card-body pt-0">
+                            <h3 class="h6 mb-0">Gabriel</h3>
+                            <p class="text-muted small mb-0">Co-fundador</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Público-alvo -->
+        <section class="mb-5">
+            <h2 class="h3 mb-3">Nosso público</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="h5 mb-2">Jovens conectados</h3>
+                            <p class="mb-0">
+                                Apaixonados por games, tecnologia e hardware, que buscam produtos atuais
+                                com ótimo custo-benefício e entrega rápida.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="h5 mb-2">Famílias modernas</h3>
+                            <p class="mb-0">
+                                Pessoas que procuram eletrodomésticos práticos e eficientes para facilitar
+                                o dia a dia, com opções de pagamento acessíveis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body">
+                            <h3 class="h5 mb-2">Profissionais e estudantes</h3>
+                            <p class="mb-0">
+                                Usuários que dependem de bons smartphones, notebooks e peças de informática
+                                para trabalhar, estudar e produzir mais.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="container-fluid py-4">
+        <div class="container text-center text-white">
+            <div class="row justify-content-center mb-4">
+                <!-- Logo -->
+                <div class="col-12 mb-3">
+                    <img src="../assets/snapps_logo.png" alt="Logo Snapps" style="height: 55px;">
+                </div>
+
+                <!-- Links -->
+                <div class="col-12">
+                    <ul class="list-unstyled d-flex flex-wrap justify-content-center gap-4 fs-5">
+                        <li><a href="index.html" class="text-white text-decoration-none">Início</a></li>
+                        <li><a href="sobre.html" class="text-white text-decoration-none">Sobre</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Consultoria</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Redes sociais -->
+                <div class="col-12 mt-3">
+                    <div class="d-flex justify-content-center gap-4 fs-3">
+                        <a href="#" class="text-white"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="text-white"><i class="fa fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-light">
+            <p class="mt-3 mb-0">© 2025 Snapps — Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <!-- ALERT CONTAINER -->
+    <div id="alert-container" class="position-fixed top-0 end-0 p-3" style="z-index: 900; width: 320px;"></div>
+
+    <!-- Offcanvas Carrinho -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Seu carrinho</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <div class="cart-items-list mb-3"></div>
+            <div class="mt-auto border-top pt-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="fw-semibold">Total:</span>
+                    <span class="fw-bold cart-total-value">R$ 0,00</span>
+                </div>
+                <button class="btn btn-primary w-100">
+                    Finalizar compra
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../scripts/cart.js"></script>
+</body>
+
+</html>
