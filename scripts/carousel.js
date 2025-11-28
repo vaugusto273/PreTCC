@@ -4,19 +4,19 @@ document.addEventListener("DOMContentLoaded", () => {
 	const nextBtn = document.querySelector(".carousel-btn.next");
 	const json = "./data/products.json";
 
-	let products = [];          // vai guardar TODOS os produtos (já achatados e embaralhados)
-	let nextProductIndex = 0;   // controla qual produto vem a seguir
-	let isAppending = false;    // trava pra não disparar várias vezes seguidas
+	let products = []; // vai guardar TODOS os produtos (já achatados e embaralhados)
+	let nextProductIndex = 0; // controla qual produto vem a seguir
+	let isAppending = false; // trava pra não disparar várias vezes seguidas
 
 	// 🔹 Achata o JSON: categories -> subcategories -> products
 	function getAllProducts(data) {
 		const all = [];
 
-		data.forEach(category => {
+		data.forEach((category) => {
 			if (!category.subcategories) return;
-			category.subcategories.forEach(subcat => {
+			category.subcategories.forEach((subcat) => {
 				if (!subcat.products) return;
-				subcat.products.forEach(prod => all.push(prod));
+				subcat.products.forEach((prod) => all.push(prod));
 			});
 		});
 
@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	// Cria um card de produto (reutilizável)
+	// Cria um card de produto (reutilizável)
 	function createProductCard(product) {
 		const card = document.createElement("article");
 		card.classList.add("product-card", "d-flex", "flex-column", "align-items-center");
@@ -44,14 +45,24 @@ document.addEventListener("DOMContentLoaded", () => {
 		const imageSrc = product.img || (product.images && product.images[0]) || "https://via.placeholder.com/300x200";
 
 		card.innerHTML = `
-			<img src="${imageSrc}" alt="${product.alt ?? product.name}">
-			<h3>${product.name}</h3>
-			<p class="price">${priceBRL}</p>
-			<button class="btn btn-primary">
-				<i class="fa fa-shopping-cart cart-icon text-center"></i>
-				Comprar
-			</button>
-		`;
+		<img src="${imageSrc}" alt="${product.alt ?? product.name}">
+		<h3>${product.name}</h3>
+		<p class="price">${priceBRL}</p>
+		<button class="btn btn-primary buy-btn" type="button">
+			<i class="fa fa-shopping-cart cart-icon text-center"></i>
+			Comprar
+		</button>
+	`;
+
+		// pega o botão dentro do card
+		const btn = card.querySelector(".buy-btn");
+
+		// só adiciona o evento se o botão existir e addToCart estiver definido
+		if (btn && typeof addToCart === "function") {
+			btn.addEventListener("click", () => {
+				addToCart(product);
+			});
+		}
 
 		return card;
 	}
