@@ -1,15 +1,174 @@
 [
-	{ "id": 0, "name": "Produto 1", "price": 199.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" },
-	{ "id": 1, "name": "Produto 2", "price": 299.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" },
-	{ "id": 2, "name": "Produto 3", "price": 399.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" },
-	{ "id": 3, "name": "Produto 4", "price": 499.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" },
-	{ "id": 4, "name": "Produto 5", "price": 599.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" },
-	{ "id": 5, "name": "Produto 6", "price": 699.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" },
-	{ "id": 6, "name": "Produto 7", "price": 799.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" },
-    { "id": 7, "name": "Produto 8", "price": 799.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" },
-    { "id": 8, "name": "Produto 9", "price": 799.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" },
-    { "id": 9, "name": "Produto 10", "price": 799.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" },
-    { "id": 10, "name": "Produto 11", "price": 799.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" },
-    { "id": 11, "name": "Produto 12", "price": 799.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" },
-	{ "id": 12, "name": "Produto 13", "price": 899.90, "img": "https://via.placeholder.com/300x200", "alt": "placeholder", "desc":"placeholder" }
+	{
+		"category": "Eletrodomésticos",
+		"subcategories": [
+			{
+				"name": "Micro-ondas",
+				"products": [
+					{
+						"id": "microondas_25l_basico",
+						"name": "Micro-ondas 25L Inox",
+						"price": 449.9,
+						"img": "./assets/products/microondas_25l.png",
+						"alt": "Micro-ondas 25 litros",
+						"desc": "Micro-ondas de 25 litros com função descongelar.",
+						"stock": 32,
+						"specs": ["Capacidade: 25L", "Cor: Inox", "Potência: 1400W"]
+					}
+				]
+			},
+			{
+				"name": "Geladeira",
+				"products": [
+					{
+						"id": "geladeira_400l_frostfree",
+						"name": "Geladeira Frost Free 400L",
+						"price": 2699.9,
+						"img": "./assets/products/geladeira_400l.png",
+						"alt": "Geladeira 400L Frost Free",
+						"desc": "Geladeira Frost Free com amplo espaço interno e baixo consumo.",
+						"stock": 12,
+						"specs": ["Capacidade: 400L", "Tipo: Frost Free", "Classificação energética: A+"]
+					}
+				]
+			},
+			{
+				"name": "Lava-louças",
+				"products": [
+					{
+						"id": "lavaloucas_12_serv",
+						"name": "Lava-louças 12 Serviços Branca",
+						"price": 2199.9,
+						"img": "./assets/products/lavaloucas_12s.png",
+						"alt": "Lava louças 12 serviços",
+						"desc": "Lava-louças com 12 serviços e 6 modos de lavagem.",
+						"stock": 8,
+						"specs": ["12 Serviços", "Consumo 0.92 kWh", "6 Programas de lavagem"]
+					}
+				]
+			}
+		]
+	},
+
+	{
+		"category": "Celular & Smartphone",
+		"subcategories": [
+			{
+				"name": "Samsung",
+				"products": [
+					{
+						"id": "samsung_s23",
+						"name": "Samsung Galaxy S23 128GB",
+						"price": 3499.0,
+						"img": "./assets/products/s23.png",
+						"alt": "Samsung Galaxy S23",
+						"desc": "Smartphone topo de linha com câmera tripla e Snapdragon.",
+						"stock": 44,
+						"specs": ["Tela 6.1'' AMOLED", "128GB armazenamento", "Câmera 50MP"]
+					}
+				]
+			},
+			{
+				"name": "iPhone",
+				"products": [
+					{
+						"id": "iphone_14_pro",
+						"name": "iPhone 14 Pro 128GB",
+						"price": 7199.0,
+						"img": "./assets/products/iphone14_pro.png",
+						"alt": "iPhone 14 Pro",
+						"desc": "iPhone 14 Pro com câmera de 48MP e tela ProMotion.",
+						"stock": 20,
+						"specs": ["Tela 6.1'' 120Hz", "A16 Bionic", "Câmera 48MP"]
+					}
+				]
+			},
+			{
+				"name": "Motorola",
+				"products": [
+					{
+						"id": "moto_g84",
+						"name": "Motorola Moto G84 256GB",
+						"price": 1999.0,
+						"img": "./assets/products/moto_g84.png",
+						"alt": "Moto G84",
+						"desc": "Smartphone intermediário premium com ótima bateria.",
+						"stock": 61,
+						"specs": ["Tela 6.5'' 120Hz", "256GB armazenamento", "Bateria 5000mAh"]
+					}
+				]
+			}
+		]
+	},
+
+	{
+		"category": "Hardware",
+		"subcategories": [
+			{
+				"name": "Computador Gamer Montado",
+				"products": [
+					{
+						"id": "pc_gamer_rtx4060",
+						"name": "PC Gamer RTX 4060 Ryzen 5 5600",
+						"price": 5899.9,
+						"img": "./assets/products/pc_gamer_4060.png",
+						"alt": "PC Gamer RTX 4060",
+						"desc": "PC Gamer com RTX 4060 e Ryzen 5, ideal para jogos em Full HD.",
+						"stock": 5,
+						"specs": ["RTX 4060 8GB", "Ryzen 5 5600", "16GB RAM DDR4"]
+					}
+				]
+			},
+			{
+				"name": "Peças para Computador",
+				"products": [
+					{
+						"id": "cooler_120mm",
+						"name": "Cooler 120x120mm Snapps",
+						"price": 49.9,
+						"img": "./assets/products/cooler_120mm.png",
+						"alt": "Cooler 120mm",
+						"desc": "Cooler silencioso de 120mm para gabinete.",
+						"stock": 120,
+						"specs": ["120mm", "12V", "Fluxo de ar: 70CFM"]
+					},
+					{
+						"id": "ssd_1tb_nvme",
+						"name": "SSD NVMe 1TB Snapps Pro",
+						"price": 399.9,
+						"img": "./assets/products/ssd_1tb.png",
+						"alt": "SSD 1TB NVMe",
+						"desc": "SSD NVMe com velocidades ultrarrápidas para gamers.",
+						"stock": 74,
+						"specs": ["1TB", "Leitura: 3500MB/s", "Gravação: 3000MB/s"]
+					}
+				]
+			},
+			{
+				"name": "Video Games",
+				"products": [
+					{
+						"id": "ps5_standard",
+						"name": "PlayStation 5 Edição Standard",
+						"price": 4299.0,
+						"img": "./assets/products/ps5.png",
+						"alt": "PlayStation 5",
+						"desc": "Console de última geração com SSD ultra rápido.",
+						"stock": 14,
+						"specs": ["825GB SSD", "HDR", "Ray Tracing"]
+					},
+					{
+						"id": "xbox_series_s",
+						"name": "Xbox Series S 512GB",
+						"price": 2499.0,
+						"img": "./assets/products/xbox_s.png",
+						"alt": "Xbox Series S",
+						"desc": "Console compacto da nova geração com ótimo custo-benefício.",
+						"stock": 28,
+						"specs": ["512GB SSD", "Resolução 1440p", "FPS Boost"]
+					}
+				]
+			}
+		]
+	}
 ]

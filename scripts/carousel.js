@@ -4,9 +4,34 @@ document.addEventListener("DOMContentLoaded", () => {
 	const nextBtn = document.querySelector(".carousel-btn.next");
 	const json = "./data/products.json";
 
-	let products = [];          // vai guardar os produtos carregados do JSON
-	let nextProductIndex = 0;   // controla qual produto vem a seguir quando formos "ciclando"
+	let products = [];          // vai guardar TODOS os produtos (já achatados e embaralhados)
+	let nextProductIndex = 0;   // controla qual produto vem a seguir
 	let isAppending = false;    // trava pra não disparar várias vezes seguidas
+
+	// 🔹 Achata o JSON: categories -> subcategories -> products
+	function getAllProducts(data) {
+		const all = [];
+
+		data.forEach(category => {
+			if (!category.subcategories) return;
+			category.subcategories.forEach(subcat => {
+				if (!subcat.products) return;
+				subcat.products.forEach(prod => all.push(prod));
+			});
+		});
+
+		return all;
+	}
+
+	// 🔹 Embaralha array (Fisher-Yates)
+	function shuffleArray(array) {
+		const arr = [...array];
+		for (let i = arr.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[arr[i], arr[j]] = [arr[j], arr[i]];
+		}
+		return arr;
+	}
 
 	// Cria um card de produto (reutilizável)
 	function createProductCard(product) {
@@ -15,17 +40,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		const priceBRL = `R$ ${product.price.toFixed(2).replace(".", ",")}`;
 
+		// usa img principal ou primeira das images
+		const imageSrc = product.img || (product.images && product.images[0]) || "https://via.placeholder.com/300x200";
+
 		card.innerHTML = `
-      <img src="${product.image}" alt="${product.alt ?? product.name}">
-      <h3>${product.name}</h3>
-      <p class="price">${priceBRL}</p>
-	  <button class="btn btn-primary"><i class="fa fa-shopping-cart cart-icon text-center"></i> Comprar </button>
-    `;
+			<img src="${imageSrc}" alt="${product.alt ?? product.name}">
+			<h3>${product.name}</h3>
+			<p class="price">${priceBRL}</p>
+			<button class="btn btn-primary">
+				<i class="fa fa-shopping-cart cart-icon text-center"></i>
+				Comprar
+			</button>
+		`;
 
 		return card;
 	}
 
-	// Adiciona N cards seguindo a ordem dos produtos, em loop (1,2,3,1,2,3...)
+	// Adiciona N cards seguindo a ordem dos produtos (já embaralhados), em loop
 	function appendNextCards(quantity) {
 		if (!products.length) return;
 
@@ -48,8 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 			if (!isAppending && position >= maxScroll - threshold) {
 				isAppending = true;
-				appendNextCards(2); // 🔹 aqui decide quantos cards novos colocar
-				// libera a trava no próximo frame
+				appendNextCards(2); // 🔹 quantos cartões novos adicionar por vez
 				requestAnimationFrame(() => {
 					isAppending = false;
 				});
@@ -66,16 +96,23 @@ document.addEventListener("DOMContentLoaded", () => {
 			return response.json();
 		})
 		.then((data) => {
-			products = data;
+			// 🔹 Achata o JSON (categories -> subcategories -> products)
+			const allProducts = getAllProducts(data);
+
+			if (!allProducts.length) {
+				throw new Error("Nenhum produto encontrado no JSON.");
+			}
+
+			// 🔹 Embaralha para que a ordem seja aleatória
+			products = shuffleArray(allProducts);
+			nextProductIndex = 0;
 
 			// Limpa (só por garantia)
 			carouselWrapper.innerHTML = "";
 
-			// Renderiza a primeira leva de produtos (ex: todos do JSON)
-			products.forEach((product) => {
-				const card = createProductCard(product);
-				carouselWrapper.appendChild(card);
-			});
+			// 🔹 Renderiza a primeira leva de produtos aleatórios
+			const INITIAL_CARDS = Math.min(8, products.length); // pode ajustar a quantidade inicial
+			appendNextCards(INITIAL_CARDS);
 
 			// Centraliza o scroll no meio do carrossel
 			requestAnimationFrame(() => {
