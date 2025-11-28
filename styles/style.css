@@ -72,35 +72,38 @@ footer {
     margin-left: 5px;
 }
 
+/* Estilo base do botão do carrinho */
 .cart-btn {
-    background-color: var(--color1);
-    color: #fff;
     border: none;
-    border-radius: 999px;
-    padding: 6px 14px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    cursor: pointer;
-    white-space: nowrap;
-}
-
-.cart-btn:hover {
-    background-color: #e0491f;
+    background: transparent;
     color: #fff;
+    padding: 0;
 }
 
-/* Ícone dentro do botão */
+/* Ícone */
 .cart-icon {
-    font-size: 20px;
-    margin-right: 4px;
+    font-size: 22px;
 }
 
-/* Valor do carrinho */
+/* Badge de quantidade */
+.cart-badge {
+    position: absolute;
+    top: -4px;
+    right: -8px;
+    min-width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    font-size: 0.6rem;
+    background-color: var(--color4); /* laranja amareladinho */
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Texto do preço abaixo do ícone (mobile) */
 .cart-price {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
 }
 
 
@@ -399,7 +402,9 @@ footer a:hover {
     }
 
     .cart-price {
-        font-size: 12px;
+        margin-top: 0;
+        margin-left: 4px;
+        font-size: 0.6rem;
     }
 
     .navbar {
@@ -412,6 +417,24 @@ footer a:hover {
         flex: 0 0 30%;
         /* 3 cards */
         max-width: 30%;
+    }
+    .cart-btn {
+        flex-direction: row;
+        align-items: center;
+        background-color: var(--color1);
+        padding: 6px 14px;
+        border-radius: 999px;
+    }
+
+    .cart-icon {
+        font-size: 20px;
+        margin-right: 4px;
+    }
+
+    .cart-price{
+        margin-top: 0;
+        margin-left: 4px;
+        font-size: 0.9rem;
     }
 }
 

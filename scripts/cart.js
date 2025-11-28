@@ -81,13 +81,28 @@ function getCartTotal() {
 // Atualiza o texto do botão do carrinho (Navbar)
 function updateCartDisplay() {
     const cartPriceEl = document.querySelector(".cart-price");
-    const total = getCartTotal();
+    const cartCountEl = document.querySelector(".cart-count");
 
+    const total = getCartTotal();
+    const qty = getCartQty();
+
+    // Atualiza o preço
     if (cartPriceEl) {
         cartPriceEl.textContent =
             total > 0 ? `R$ ${total.toFixed(2).replace(".", ",")}` : "R$ 0,00";
     }
+
+    // Atualiza o badge de quantidade
+    if (cartCountEl) {
+        if (qty > 0) {
+            cartCountEl.textContent = qty;
+            cartCountEl.classList.remove("d-none");
+        } else {
+            cartCountEl.classList.add("d-none");
+        }
+    }
 }
+
 
 // 🔹 Monta a lista de itens dentro do offcanvas
 function renderCartItems() {

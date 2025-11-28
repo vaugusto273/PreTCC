@@ -11,11 +11,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Snapps</title>
     <!-- ALERTAS DO SITE -->
-    <div id="alert-container" class="position-fixed top-0 end-0 p-3" style="z-index: 2000; width: 320px;"></div>
 
 </head>
 
 <body>
+    <div id="alert-container" class="position-fixed top-0 end-0 p-3" style="z-index: 900; width: 320px;"></div>
     <header class="container-fluid" id="v-navbar">
         <nav class="navbar navbar-expand-lg navbar-snapps px-3">
             <button class="btn btn-menu d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#demo">
@@ -34,10 +34,15 @@
                 </button>
             </form>
 
-            <button class="btn cart-btn d-flex align-items-center justify-content-end" type="button">
-                <i class="fa fa-shopping-cart cart-icon"></i>
-                <span class="cart-price">R$0.00</span>
+            <button class="btn cart-btn d-flex flex-column align-items-center position-relative cart-btn-trigger"
+                type="button">
+                <div class="position-relative">
+                    <i class="fa fa-shopping-cart cart-icon"></i>
+                    <span class="cart-badge cart-count d-none">0</span>
+                </div>
+                <span class="cart-price cart-price-text small mt-1">R$ 0,00</span>
             </button>
+
 
         </nav>
     </header>
