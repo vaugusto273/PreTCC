@@ -11,8 +11,6 @@ body{
 
 header,
 footer {
-
-
     justify-content: center;
     align-items: center;
     background-color: var(--color2);
@@ -74,17 +72,37 @@ footer {
     margin-left: 5px;
 }
 
-.cart-area {
-    color: white;
-    font-size: 18px;
-    text-align: end;
+.cart-btn {
+    background-color: var(--color1);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    white-space: nowrap;
 }
 
-.cart-icon {
-    font-size: 26px;
-    margin-right: 6px;
-    text-align: center;
+.cart-btn:hover {
+    background-color: #e0491f;
+    color: #fff;
 }
+
+/* Ícone dentro do botão */
+.cart-icon {
+    font-size: 20px;
+    margin-right: 4px;
+}
+
+/* Valor do carrinho */
+.cart-price {
+    font-size: 0.9rem;
+}
+
 
 /* Barra laranja das categorias */
 .categories-bar {
@@ -294,6 +312,65 @@ footer {
 .carousel-btn:hover {
     background: #f0f0f0;
 }
+
+/* Botões no estilo Snapps */
+.btn-snapps {
+    background-color: var(--color4);
+    border-color: var(--color4);
+    font-weight: 600;
+}
+
+.btn-snapps:hover {
+    background-color: #e57b00;
+    border-color: #e57b00;
+}
+
+.btn-outline-snapps {
+    border-color: var(--color4);
+    color: var(--color4);
+    font-weight: 600;
+}
+
+.btn-outline-snapps:hover {
+    background-color: var(--color4);
+    color: #fff;
+}
+
+/* Página de produto */
+.product-page .card {
+    border-radius: 12px;
+}
+
+.product-main-image img {
+    max-height: 320px;
+    object-fit: contain;
+}
+
+.product-thumbs img {
+    cursor: pointer;
+    height: 80px;
+    object-fit: contain;
+}
+
+.product-price {
+    color: var(--color1);
+    font-weight: 700;
+}
+
+.qty-input {
+    max-width: 80px;
+}
+
+/* Breadcrumb */
+.breadcrumb a {
+    text-decoration: none;
+}
+
+/* Caixa de frete */
+.shipping-box input::placeholder {
+    font-size: 0.85rem;
+}
+
 
 
 footer {

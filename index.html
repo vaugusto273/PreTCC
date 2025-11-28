@@ -14,87 +14,92 @@
 
 <body>
     <header class="container-fluid" id="v-navbar">
-    <nav class="navbar navbar-expand-lg navbar-snapps px-3">
-        <button class="btn btn-menu d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#demo">
-            <i class="navbar-toggler-icon"></i>
-        </button>
-
-        <a href="#" class="navbar-brand mx-2">
-            <img id="logo" src="./assets/snapps_logo.png" alt="Logo">
-        </a>
-
-        <form class="search-bar d-flex mx-3 flex-grow-1">
-            <input class="form-control search-input" type="text"
-                placeholder="Search everything at Snapps online and in store">
-            <button class="btn btn-search" type="button">
-                <i class="fa fa-search"></i>
+        <nav class="navbar navbar-expand-lg navbar-snapps px-3">
+            <button class="btn btn-menu d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                <i class="navbar-toggler-icon"></i>
             </button>
-        </form>
 
-        <div class="cart-area align-items-center">
-            <i class="fa fa-shopping-cart cart-icon"></i>
-            <span class="cart-price">R$0.00</span>
-        </div>
-    </nav>
-</header>
+            <a href="#" class="navbar-brand mx-2">
+                <img id="logo" src="./assets/snapps_logo.png" alt="Logo">
+            </a>
 
-<!-- Barra de categorias (desktop) -->
-<div class="categories-bar d-none d-lg-block">
-    <div class="container d-flex justify-content-center gap-5">
+            <form class="search-bar d-flex mx-3 flex-grow-1">
+                <input class="form-control search-input" type="text"
+                    placeholder="Search everything at Snapps online and in store">
+                <button class="btn btn-search" type="button">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
 
-        <!-- Eletrodomésticos -->
-        <div class="dropdown">
-            <button class="btn category-btn dropdown-toggle" type="button"
-                id="catEletro" data-bs-toggle="dropdown" aria-expanded="false">
-                Eletrodomésticos
+            <button class="btn cart-btn d-flex align-items-center">
+                <i class="fa fa-shopping-cart cart-icon"></i>
+                <span class="cart-price">R$0.00</span>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="catEletro">
-                <li><a class="dropdown-item" href="#">Micro-ondas</a></li>
-                <li><a class="dropdown-item" href="#">Geladeira</a></li>
-                <li><a class="dropdown-item" href="#">Lava-louças</a></li>
-            </ul>
-        </div>
 
-        <!-- Celular & Smartphone -->
-        <div class="dropdown">
-            <button class="btn category-btn dropdown-toggle" type="button"
-                id="catCel" data-bs-toggle="dropdown" aria-expanded="false">
-                Celular & Smartphone
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="catCel">
-                <li><a class="dropdown-item" href="#">Samsung</a></li>
-                <li><a class="dropdown-item" href="#">iPhone</a></li>
-                <li><a class="dropdown-item" href="#">Motorola</a></li>
-            </ul>
-        </div>
+        </nav>
+    </header>
 
-        <!-- Hardware -->
-        <div class="dropdown">
-            <button class="btn category-btn dropdown-toggle" type="button"
-                id="catHard" data-bs-toggle="dropdown" aria-expanded="false">
-                Hardware
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="catHard">
-                <li><a class="dropdown-item" href="#">Computador Gamer montado</a></li>
-                <li><a class="dropdown-item" href="#">Peças para Computador</a></li>
-                <li><a class="dropdown-item" href="#">Video Games</a></li>
-            </ul>
-        </div>
+    <!-- Barra de categorias (desktop) -->
+    <div class="categories-bar d-none d-lg-block">
+        <div class="container d-flex justify-content-center gap-5">
 
+            <!-- Eletrodomésticos -->
+            <div class="dropdown">
+                <button class="btn category-btn dropdown-toggle" type="button" id="catEletro" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Eletrodomésticos
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="catEletro">
+                    <li><a class="dropdown-item" href="#">Micro-ondas</a></li>
+                    <li><a class="dropdown-item" href="#">Geladeira</a></li>
+                    <li><a class="dropdown-item" href="#">Lava-louças</a></li>
+                </ul>
+            </div>
+
+            <!-- Celular & Smartphone -->
+            <div class="dropdown">
+                <button class="btn category-btn dropdown-toggle" type="button" id="catCel" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Celular & Smartphone
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="catCel">
+                    <li><a class="dropdown-item" href="#">Samsung</a></li>
+                    <li><a class="dropdown-item" href="#">iPhone</a></li>
+                    <li><a class="dropdown-item" href="#">Motorola</a></li>
+                </ul>
+            </div>
+
+            <!-- Hardware -->
+            <div class="dropdown">
+                <button class="btn category-btn dropdown-toggle" type="button" id="catHard" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Hardware
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="catHard">
+                    <li><a class="dropdown-item" href="#">Computador Gamer montado</a></li>
+                    <li><a class="dropdown-item" href="#">Peças para Computador</a></li>
+                    <li><a class="dropdown-item" href="#">Video Games</a></li>
+                </ul>
+            </div>
+
+        </div>
     </div>
-</div>
 
 
 
     <!--Off Canvas-->
     <div class="offcanvas offcanvas-start offcanvas-lg" tabindex="-1" id="demo">
-        <div class="offcanvas-header">
+        <div class="offcanvas-header d-flex align-items-center">
             <img id="logo" src="./assets/snapps_logo.png" alt="Logo">
-            <div class="cart-area align-items-center justify-content-end">
-                <i class="fa fa-shopping-cart cart-icon"></i>
-                <span class="cart-price">R$0.00</span>
+
+            <div class="d-flex ms-auto align-items-center gap-2">
+                <button class="btn cart-btn d-flex align-items-center" type="button">
+                    <i class="fa fa-shopping-cart cart-icon"></i>
+                    <span class="cart-price">R$0.00</span>
+                </button>
+
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
             </div>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
         </div>
 
         <div class="offcanvas-body">
@@ -146,98 +151,63 @@
         <section>
             <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
                 <ol class="carousel-indicators">
-                    <li
-                        data-bs-target="#carouselId"
-                        data-bs-slide-to="0"
-                        class="active"
-                        aria-current="true"
-                        aria-label="First slide"
-                    ></li>
-                    <li
-                        data-bs-target="#carouselId"
-                        data-bs-slide-to="1"
-                        aria-label="Second slide"
-                    ></li>
-                    <li
-                        data-bs-target="#carouselId"
-                        data-bs-slide-to="2"
-                        aria-label="Third slide"
-                    ></li>
+                    <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active" aria-current="true"
+                        aria-label="First slide"></li>
+                    <li data-bs-target="#carouselId" data-bs-slide-to="1" aria-label="Second slide"></li>
+                    <li data-bs-target="#carouselId" data-bs-slide-to="2" aria-label="Third slide"></li>
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img
-                            src="./assets/Banner1.png"
-                            class="w-100 d-block"
-                            alt="First slide"
-                        />
+                        <img src="./assets/Banner1.png" class="w-100 d-block" alt="First slide" />
                         <div class="carousel-caption d-none d-md-block">
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img
-                            src="./assets/Banner2.png"
-                            class="w-100 d-block"
-                            alt="Second slide"
-                        />
+                        <img src="./assets/Banner2.png" class="w-100 d-block" alt="Second slide" />
                         <div class="carousel-caption d-none d-md-block">
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img
-                            src="./assets/Banner3.jpg"
-                            class="w-100 d-block"
-                            alt="Third slide"
-                        />
+                        <img src="./assets/Banner3.jpg" class="w-100 d-block" alt="Third slide" />
                         <div class="carousel-caption d-none d-md-block">
                         </div>
                     </div>
                 </div>
-                <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#carouselId"
-                    data-bs-slide="prev"
-                >
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#carouselId"
-                    data-bs-slide="next"
-                >
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-            
+
         </section>
         <section>
-            
+
         </section>
         <section class="product-carousel container my-4" aria-label="Produtos em destaque">
-    <div class="mb-3">
-        <h2 class="h4">Produtos em Destaque</h2>
-    </div>
+            <div class="mb-3">
+                <h2 class="h4">Produtos em Destaque</h2>
+            </div>
 
-    <div class="carousel-container">
-        <!-- Botão anterior -->
-        <button class="carousel-btn prev" type="button" aria-label="Anterior">
-            ❮
-        </button>
+            <div class="carousel-container">
+                <!-- Botão anterior -->
+                <button class="carousel-btn prev" type="button" aria-label="Anterior">
+                    ❮
+                </button>
 
-        <!-- Faixa rolável de produtos -->
-        <div class="carousel-wrapper">
-        </div>
+                <!-- Faixa rolável de produtos -->
+                <div class="carousel-wrapper">
+                </div>
 
-        <!-- Botão próximo -->
-        <button class="carousel-btn next" type="button" aria-label="Próximo">
-            ❯
-        </button>
-    </div>
-</section>
+                <!-- Botão próximo -->
+                <button class="carousel-btn next" type="button" aria-label="Próximo">
+                    ❯
+                </button>
+            </div>
+        </section>
 
     </main>
 
@@ -281,4 +251,5 @@
     </footer>
 </body>
 <script src="./scripts/example.js"></script>
+
 </html>
