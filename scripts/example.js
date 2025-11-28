@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	// Cria um card de produto (reutilizável)
 	function createProductCard(product) {
 		const card = document.createElement("article");
-		card.classList.add("product-card");
+		card.classList.add("product-card", "d-flex", "flex-column", "align-items-center");
 
 		const priceBRL = `R$ ${product.price.toFixed(2).replace(".", ",")}`;
 
@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <img src="${product.image}" alt="${product.alt ?? product.name}">
       <h3>${product.name}</h3>
       <p class="price">${priceBRL}</p>
+	  <button class="btn btn-primary"><i class="fa fa-shopping-cart cart-icon text-center"></i> Comprar </button>
     `;
 
 		return card;
