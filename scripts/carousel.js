@@ -62,11 +62,13 @@ document.addEventListener("DOMContentLoaded", () => {
         <img src="${imageSrc}" alt="${product.alt ?? product.name}">
         <h3>${product.name}</h3>
         <p class="price">${priceBRL}</p>
-        <button class="btn btn-primary">
+        <button class="btn btn-primary buy-btn" type="button">
             <i class="fa fa-shopping-cart cart-icon text-center"></i>
             Comprar
         </button>
     `;
+
+	
 
 		return card;
 	}

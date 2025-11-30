@@ -106,7 +106,6 @@ footer {
     font-size: 0.75rem;
 }
 
-
 /* Barra laranja das categorias */
 .categories-bar {
     background-color: var(--color1);  /* laranja */
@@ -255,7 +254,6 @@ footer {
 /* card */
 .product-card {
     flex: 0 0 80%;
-    /* mobile: 1 por vez */
     max-width: 80%;
     background: #fff;
     border: 1px solid black;
@@ -284,6 +282,11 @@ footer {
 .price {
     font-weight: bold;
     color: var(--color1);
+    margin-top: auto;
+    margin-bottom: 0;
+}
+.product-card .buy-btn {
+    margin-top: auto;
 }
 
 /* botões ❮ ❯ */
