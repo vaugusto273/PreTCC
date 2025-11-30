@@ -5,7 +5,7 @@
     --color4: #FF8903;
 }
 
-body{
+body {
     background-color: var(--color3);
 }
 
@@ -14,6 +14,14 @@ footer {
     justify-content: center;
     align-items: center;
     background-color: var(--color2);
+}
+
+#alert-container {
+    pointer-events: none;
+}
+
+#alert-container .alert {
+    pointer-events: auto;
 }
 
 .navbar {
@@ -45,7 +53,7 @@ footer {
     padding: 4px 10px;
 }
 
-.search-input:focus{
+.search-input:focus {
     background-color: var(--color3);
 }
 
@@ -94,7 +102,8 @@ footer {
     height: 16px;
     border-radius: 50%;
     font-size: 0.6rem;
-    background-color: var(--color4); /* laranja amareladinho */
+    background-color: var(--color4);
+    /* laranja amareladinho */
     color: #fff;
     display: flex;
     align-items: center;
@@ -108,7 +117,8 @@ footer {
 
 /* Barra laranja das categorias */
 .categories-bar {
-    background-color: var(--color1);  /* laranja */
+    background-color: var(--color1);
+    /* laranja */
 }
 
 /* Container interno: centraliza e espaça as categorias */
@@ -140,7 +150,8 @@ footer {
     bottom: -0.3rem;
     width: 0;
     height: 3px;
-    background-color: var(--color4);  /* laranja mais claro */
+    background-color: var(--color4);
+    /* laranja mais claro */
     border-radius: 999px;
     transition: width 0.2s ease;
 }
@@ -222,7 +233,7 @@ footer {
     transition: 0.2s;
 }
 
-.product-carousel{
+.product-carousel {
     background-color: white;
     border-radius: 20px;
     width: 95vw;
@@ -232,7 +243,7 @@ footer {
     position: relative;
 }
 
-.carousel-item img{
+.carousel-item img {
     width: 50px;
     height: 100%;
 }
@@ -362,7 +373,8 @@ footer {
 #more-products-section .product-card h3 {
     font-size: 0.95rem;
     margin-top: 0.25rem;
-    min-height: 2.4em; /* dá uma alinhada entre os cards */
+    min-height: 2.4em;
+    /* dá uma alinhada entre os cards */
 }
 
 #more-products-section .price {
@@ -423,7 +435,8 @@ footer {
 }
 
 .text-snapps-primary {
-    color: var(--color1); /* laranja Snapps */
+    color: var(--color1);
+    /* laranja Snapps */
 }
 
 .about-snapps .card {
@@ -469,18 +482,22 @@ footer a:hover {
     .navbar {
         width: 100%;
     }
+
     .navbar-snapps {
         padding-left: 4px;
         padding-right: 4px;
     }
+
     .btn-menu {
         margin-left: -4px;
     }
+
     .navbar-brand {
         margin-left: 4px !important;
         margin-right: 6px !important;
     }
-    .carousel-item{
+
+    .carousel-item {
         height: 25vh;
     }
 }
@@ -491,6 +508,7 @@ footer a:hover {
         /* 3 cards */
         max-width: 30%;
     }
+
     .cart-btn {
         flex-direction: row;
         align-items: center;
@@ -504,7 +522,7 @@ footer a:hover {
         margin-right: 4px;
     }
 
-    .cart-price{
+    .cart-price {
         margin-top: 0;
         margin-left: 4px;
         font-size: 0.9rem;
