@@ -54,12 +54,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("product-price").textContent =
         `R$ ${product.price.toFixed(2).replace(".", ",")}`;
 
-    const installment = (product.price / 10).toFixed(2).replace(".", ",");
-    const installmentsEl = document.getElementById("product-installments");
-    if (installmentsEl) {
-        installmentsEl.textContent = `ou em até 10x de R$ ${installment} sem juros`;
-    }
-
     document.getElementById("product-stock").textContent =
         `${product.stock} unidades disponíveis • envio imediato`;
 
