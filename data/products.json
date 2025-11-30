@@ -134,7 +134,7 @@
 					},
 					{
 						"id": "ssd_1tb_nvme",
-						"name": "SSD NVMe 1TB Snapps Pro",
+						"name": "SSD NVMe 1TB",
 						"price": 399.9,
 						"img": "./assets/Products/ssd1tb.jpg",
 						"alt": "SSD 1TB NVMe",
