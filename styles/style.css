@@ -442,6 +442,52 @@ footer {
     word-break: break-word;
 }
 
+#search-results-section {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+#search-results-section .product-card {
+    flex: 1 1 auto !important;
+    max-width: 100% !important;
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+#search-results-section .product-card img {
+    height: 140px;
+    object-fit: contain;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+#search-results-section .product-card h3 {
+    font-size: 0.95rem;
+    margin-top: 0.25rem;
+    min-height: 2.4em;
+}
+
+#search-results-section .price {
+    margin-bottom: 0.4rem;
+}
+
+#search-results-section .product-card .btn {
+    width: 100%;
+    max-width: 140px;
+}
+
+@media (max-width: 576px) {
+    #search-results-section .product-card {
+        border-radius: 0.75rem;
+    }
+}
+
+
 footer {
     margin-top: 24px;
 }
