@@ -427,6 +427,20 @@ footer a:hover {
     .navbar {
         width: 100%;
     }
+    .navbar-snapps {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    .btn-menu {
+        margin-left: -4px;
+    }
+    .navbar-brand {
+        margin-left: 4px !important;
+        margin-right: 6px !important;
+    }
+    .carousel-item{
+        height: 25vh;
+    }
 }
 
 @media (min-width: 768px) {
