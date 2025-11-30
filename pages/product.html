@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Snapps - Produto</title>
+
+    <!-- Bootstrap / Ícones / CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- ALERTAS (mesmo do index) -->
+    <div id="alert-container"
+         class="position-fixed top-0 end-0 p-3"
+         style="z-index: 900; width: 320px; pointer-events: none;"></div>
+
+    <!-- ========== HEADER ========== -->
+    <header class="container-fluid" id="v-navbar">
+        <nav class="navbar navbar-expand-lg navbar-snapps px-2">
+            <!-- Botão menu (mobile) -->
+            <button class="btn btn-menu d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                <i class="navbar-toggler-icon"></i>
+            </button>
+
+            <!-- Logo -->
+            <a href="../index.html" class="navbar-brand mx-2">
+                <img id="logo" src="../assets/snapps_logo.png" alt="Logo">
+            </a>
+
+            <!-- Busca -->
+            <form class="search-bar d-flex mx-3 flex-grow-1">
+                <input class="form-control search-input" type="text"
+                       placeholder="Search everything at Snapps online and in store">
+                <button class="btn btn-search" type="button">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+
+            <!-- Carrinho -->
+            <button class="btn cart-btn d-flex flex-column align-items-center position-relative cart-btn-trigger"
+                    type="button">
+                <div class="position-relative">
+                    <i class="fa fa-shopping-cart cart-icon"></i>
+                    <span class="cart-badge cart-count d-none">0</span>
+                </div>
+                <span class="cart-price cart-price-text small mt-1">R$ 0,00</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- ========== BARRA DE CATEGORIAS (DESKTOP) ========== -->
+    <div class="categories-bar d-none d-lg-block">
+        <div class="container d-flex justify-content-center gap-5">
+
+            <!-- Eletrodomésticos -->
+            <div class="dropdown">
+                <button class="btn category-btn dropdown-toggle" type="button"
+                        id="catEletro" data-bs-toggle="dropdown" aria-expanded="false">
+                    Eletrodomésticos
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="catEletro">
+                    <li><a class="dropdown-item" href="#">Micro-ondas</a></li>
+                    <li><a class="dropdown-item" href="#">Geladeira</a></li>
+                    <li><a class="dropdown-item" href="#">Lava-louças</a></li>
+                </ul>
+            </div>
+
+            <!-- Celular & Smartphone -->
+            <div class="dropdown">
+                <button class="btn category-btn dropdown-toggle" type="button"
+                        id="catCel" data-bs-toggle="dropdown" aria-expanded="false">
+                    Celular & Smartphone
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="catCel">
+                    <li><a class="dropdown-item" href="#">Samsung</a></li>
+                    <li><a class="dropdown-item" href="#">iPhone</a></li>
+                    <li><a class="dropdown-item" href="#">Motorola</a></li>
+                </ul>
+            </div>
+
+            <!-- Hardware -->
+            <div class="dropdown">
+                <button class="btn category-btn dropdown-toggle" type="button"
+                        id="catHard" data-bs-toggle="dropdown" aria-expanded="false">
+                    Hardware
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="catHard">
+                    <li><a class="dropdown-item" href="#">Computador Gamer montado</a></li>
+                    <li><a class="dropdown-item" href="#">Peças para Computador</a></li>
+                    <li><a class="dropdown-item" href="#">Video Games</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ========== OFFCANVAS MENU MOBILE (mesmo do index) ========== -->
+    <div class="offcanvas offcanvas-start offcanvas-lg" tabindex="-1" id="demo">
+        <div class="offcanvas-header d-flex align-items-center">
+            <img id="logo" src="../assets/snapps_logo.png" alt="Logo">
+            <div class="d-flex ms-auto align-items-center gap-2">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+        </div>
+
+        <div class="offcanvas-body">
+            <ul class="list-group list-group-flush">
+                <!-- Eletrodomésticos -->
+                <li class="list-group-item menu-item">
+                    <a class="menu-link" data-bs-toggle="collapse" href="#subEletro">
+                        Eletrodomésticos
+                    </a>
+                    <ul class="collapse submenu" id="subEletro">
+                        <li><a href="#" class="submenu-item">Micro-ondas</a></li>
+                        <li><a href="#" class="submenu-item">Geladeira</a></li>
+                        <li><a href="#" class="submenu-item">Lava-louças</a></li>
+                    </ul>
+                </li>
+
+                <!-- Celular -->
+                <li class="list-group-item menu-item">
+                    <a class="menu-link" data-bs-toggle="collapse" href="#subCel">
+                        Celular & Smartphone
+                    </a>
+                    <ul class="collapse submenu" id="subCel">
+                        <li><a href="#" class="submenu-item">Samsung</a></li>
+                        <li><a href="#" class="submenu-item">iPhone</a></li>
+                        <li><a href="#" class="submenu-item">Motorola</a></li>
+                    </ul>
+                </li>
+
+                <!-- Hardware -->
+                <li class="list-group-item menu-item">
+                    <a class="menu-link" data-bs-toggle="collapse" href="#subHard">
+                        Hardware
+                    </a>
+                    <ul class="collapse submenu" id="subHard">
+                        <li><a href="#" class="submenu-item">Computador Gamer montado</a></li>
+                        <li><a href="#" class="submenu-item">Peças para Computador</a></li>
+                        <li><a href="#" class="submenu-item">Videogames</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ========== OFFCANVAS CARRINHO (mesmo do index) ========== -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Seu carrinho</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <div class="cart-items-list mb-3"></div>
+
+            <div class="mt-auto border-top pt-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="fw-semibold">Total:</span>
+                    <span class="fw-bold cart-total-value">R$ 0,00</span>
+                </div>
+                <button class="btn btn-primary w-100"
+                        onclick="window.location.href='./checkout.html'">
+                    Finalizar compra
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== MAIN ========== -->
+    <main class="container my-4 product-page">
+
+        <!-- Breadcrumb preenchido via JS -->
+        <nav aria-label="breadcrumb" class="mb-3">
+            <ol class="breadcrumb mb-0" id="breadcrumb"></ol>
+        </nav>
+
+        <div class="row g-4">
+            <!-- LEFT: Imagens -->
+            <div class="col-md-5">
+                <div class="product-gallery card border-0 shadow-sm">
+                    <div class="product-main-image text-center p-3">
+                        <img id="product-main-img" src="" alt="" class="img-fluid">
+                    </div>
+                    <div id="product-thumbs" class="product-thumbs d-flex gap-2 px-3 pb-3">
+                        <!-- miniaturas via JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: Infos -->
+            <div class="col-md-7">
+                <section class="product-info card border-0 shadow-sm p-3 p-md-4">
+                    <h1 id="product-title" class="product-title h4 mb-2"></h1>
+
+                    <div class="product-price-box mb-3">
+                        <p id="product-price" class="product-price h3 mb-1"></p>
+                        <p class="mb-1 text-muted" id="product-installments"></p>
+                        <p class="mb-0 text-success small" id="product-stock"></p>
+                    </div>
+
+                    <!-- Quantidade + botões -->
+                    <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
+                        <div class="d-flex align-items-center gap-2">
+                            <label class="fw-semibold" for="qty">Qtd:</label>
+                            <input type="number" id="qty" min="1" value="1"
+                                   class="form-control form-control-sm qty-input">
+                        </div>
+
+                        <button id="btn-add-cart" class="btn btn-primary btn-snapps">
+                            <i class="fa fa-shopping-cart me-2"></i> Adicionar ao carrinho
+                        </button>
+
+                        <button id="btn-buy-now" class="btn btn-outline-snapps">
+                            Comprar agora
+                        </button>
+                    </div>
+
+                    <!-- Especificações -->
+                    <div id="product-specs" class="product-specs mt-3"></div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Descrição -->
+        <section class="card border-0 shadow-sm mt-4">
+            <div class="card-body">
+                <h2 class="h5">Descrição do produto</h2>
+                <p id="product-desc"></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER (igual ao index, só ajustando paths) ========== -->
+    <footer class="container-fluid py-4">
+        <div class="container text-center text-white">
+            <div class="row justify-content-center mb-4">
+                <div class="col-12 mb-3">
+                    <img src="../assets/snapps_logo.png" alt="Logo Snapps" style="height: 55px;">
+                </div>
+
+                <div class="col-12">
+                    <ul class="list-unstyled d-flex flex-wrap justify-content-center gap-4 fs-5">
+                        <li><a href="../index.html" class="text-white text-decoration-none">Início</a></li>
+                        <li><a href="./sobre.html" class="text-white text-decoration-none">Sobre</a></li>
+                        <li><a href="./contato.html" class="text-white text-decoration-none">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 mt-3">
+                    <div class="d-flex justify-content-center gap-4 fs-3">
+                        <a href="#" class="text-white"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="text-white"><i class="fa fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-light">
+            <p class="mt-3 mb-0">© 2025 Snapps — Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../scripts/cart.js"></script>
+    <script src="../scripts/products.js"></script>
+</body>
+
+</html>

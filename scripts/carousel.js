@@ -59,8 +59,10 @@ document.addEventListener("DOMContentLoaded", () => {
 		const imageSrc = product.img || (product.images && product.images[0]) || "https://via.placeholder.com/300x200";
 
 		card.innerHTML = `
-        <img src="${imageSrc}" alt="${product.alt ?? product.name}">
+		<a href="./pages/product.html?id=${product.id}" class="product-item">
+        	<img src="${imageSrc}" alt="${product.alt ?? product.name}">
         <h3>${product.name}</h3>
+		</a>
         <p class="price">${priceBRL}</p>
         <button class="btn btn-primary buy-btn" type="button">
             <i class="fa fa-shopping-cart cart-icon text-center"></i>

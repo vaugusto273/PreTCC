@@ -123,12 +123,35 @@ function renderCartItems() {
     cart.forEach(item => {
         const row = document.createElement("div");
         row.className = "d-flex align-items-center mb-2 cart-item";
-        row.dataset.id = item.id; // pra facilitar
+        row.dataset.id = item.id; 
 
         const itemTotal = item.price * item.qty;
         const itemTotalBRL = `R$ ${itemTotal.toFixed(2).replace(".", ",")}`;
 
+        if(window.location.pathname != "/index.html"){
         row.innerHTML = `
+            <img 
+                src=".${item.img || "https://via.placeholder.com/60x60"}" 
+                alt="${item.name}"
+                class="me-2"
+                style="width: 48px; height: 48px; object-fit: contain;"
+            >
+            <div class="flex-grow-1">
+                <div class="fw-semibold small">${item.name}</div>
+                <div class="text-muted small">Qtd: ${item.qty}</div>
+            </div>
+            <div class="text-end" style="min-width: 110px;">
+                <div class="fw-semibold small">
+                    ${itemTotalBRL}
+                </div>
+                <button type="button" class="btn btn-link btn-sm text-danger cart-remove-btn p-0">
+                    Remover
+                </button>
+            </div>
+        `;
+        }
+        else{
+            row.innerHTML = `
             <img 
                 src="${item.img || "https://via.placeholder.com/60x60"}" 
                 alt="${item.name}"
@@ -148,6 +171,7 @@ function renderCartItems() {
                 </button>
             </div>
         `;
+        }
 
         listEl.appendChild(row);
     });
