@@ -226,6 +226,7 @@ footer {
 .product-carousel{
     background-color: white;
     border-radius: 20px;
+    width: 95vw;
 }
 
 .carousel-container {
@@ -337,6 +338,46 @@ footer {
 .btn-outline-snapps:hover {
     background-color: var(--color4);
     color: #fff;
+}
+
+#more-products-section .product-card {
+    flex: 1 1 auto;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+/* imagem um pouco menor e com espaçamento */
+#more-products-section .product-card img {
+    height: 140px;
+    object-fit: contain;
+    margin-bottom: 8px;
+}
+
+/* título e preço um pouco mais enxutos */
+#more-products-section .product-card h3 {
+    font-size: 0.95rem;
+    margin-top: 0.25rem;
+    min-height: 2.4em; /* dá uma alinhada entre os cards */
+}
+
+#more-products-section .price {
+    margin-bottom: 0.4rem;
+}
+
+/* botão ocupando boa parte da largura */
+#more-products-section .product-card .btn {
+    width: 100%;
+    max-width: 140px;
+}
+
+#more-products-section {
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px
 }
 
 /* Página de produto */

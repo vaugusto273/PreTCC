@@ -8,6 +8,18 @@ document.addEventListener("DOMContentLoaded", () => {
 	let nextProductIndex = 0; // controla qual produto vem a seguir
 	let isAppending = false; // trava pra não disparar várias vezes seguidas
 
+	function mdc(a, b) {
+        return b === 0 ? a : mdc(b, a % b);
+    }
+
+    function mmc(a, b) {
+        return (a * b) / mdc(a, b);
+    }
+
+    function mmcArray(arr) {
+        return arr.reduce((acc, val) => mmc(acc, val));
+    }
+
 	// 🔹 Achata o JSON: categories -> subcategories -> products
 	function getAllProducts(data) {
 		const all = [];
@@ -34,10 +46,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	// Cria um card de produto (reutilizável)
-	// Cria um card de produto (reutilizável)
-	function createProductCard(product) {
+	function createProductCard(product, extraClass = "") {
 		const card = document.createElement("article");
 		card.classList.add("product-card", "d-flex", "flex-column", "align-items-center");
+		if (extraClass) {
+			card.classList.add(extraClass); // para o grid
+		}
 
 		const priceBRL = `R$ ${product.price.toFixed(2).replace(".", ",")}`;
 
@@ -45,24 +59,14 @@ document.addEventListener("DOMContentLoaded", () => {
 		const imageSrc = product.img || (product.images && product.images[0]) || "https://via.placeholder.com/300x200";
 
 		card.innerHTML = `
-		<img src="${imageSrc}" alt="${product.alt ?? product.name}">
-		<h3>${product.name}</h3>
-		<p class="price">${priceBRL}</p>
-		<button class="btn btn-primary buy-btn" type="button">
-			<i class="fa fa-shopping-cart cart-icon text-center"></i>
-			Comprar
-		</button>
-	`;
-
-		// pega o botão dentro do card
-		const btn = card.querySelector(".buy-btn");
-
-		// só adiciona o evento se o botão existir e addToCart estiver definido
-		if (btn && typeof addToCart === "function") {
-			btn.addEventListener("click", () => {
-				addToCart(product);
-			});
-		}
+        <img src="${imageSrc}" alt="${product.alt ?? product.name}">
+        <h3>${product.name}</h3>
+        <p class="price">${priceBRL}</p>
+        <button class="btn btn-primary">
+            <i class="fa fa-shopping-cart cart-icon text-center"></i>
+            Comprar
+        </button>
+    `;
 
 		return card;
 	}
@@ -97,6 +101,50 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		});
 	}
+
+function renderRandomProductsGrid(allProducts) {
+        const grid = document.getElementById("random-products-grid");
+        if (!grid) return;
+
+        const shuffled = shuffleArray(allProducts);
+
+        const total = shuffled.length;
+
+        const hardLimit = Math.min(20, total);
+
+        // quantos cabem por linha em cada breakpoint
+        const perRow = [2, 3, 4]; // col-6, col-md-4, col-lg-3
+
+        // MMC desses valores (2,3,4) => 12
+        const idealGroup = mmcArray(perRow);
+
+        let count = Math.floor(hardLimit / idealGroup) * idealGroup;
+
+        if (count === 0) {
+            const desktopCols = perRow[perRow.length - 1]; // 4
+            count = Math.floor(hardLimit / desktopCols) * desktopCols;
+        }
+
+        if (count === 0) {
+            count = hardLimit;
+        }
+
+        const selectedProducts = shuffled.slice(0, count);
+
+        grid.innerHTML = "";
+
+        selectedProducts.forEach((product) => {
+            const col = document.createElement("div");
+            col.className = "col-6 col-md-4 col-lg-3";
+
+            const card = createProductCard(product, "product-card-grid");
+            col.appendChild(card);
+
+            grid.appendChild(col);
+        });
+    }
+
+
 
 	// Carrega o JSON de produtos
 	fetch(json)
@@ -135,6 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 			// Ativa o infinite scroll
 			setupInfiniteScroll();
+			renderRandomProductsGrid(allProducts);
 		})
 		.catch((error) => {
 			console.error(error);
