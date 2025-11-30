@@ -11,6 +11,7 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -99,7 +100,7 @@
         </div>
     </div>
 
-    <!-- ========== OFFCANVAS MENU MOBILE (mesmo do index) ========== -->
+    <!-- ========== OFFCANVAS MENU MOBILE ========== -->
     <div class="offcanvas offcanvas-start offcanvas-lg" tabindex="-1" id="demo">
         <div class="offcanvas-header d-flex align-items-center">
             <img id="logo" src="../assets/snapps_logo.png" alt="Logo">
@@ -149,7 +150,7 @@
         </div>
     </div>
 
-    <!-- ========== OFFCANVAS CARRINHO (mesmo do index) ========== -->
+    <!-- ========== OFFCANVAS CARRINHO ========== -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title">Seu carrinho</h5>
@@ -179,10 +180,10 @@
             <ol class="breadcrumb mb-0" id="breadcrumb"></ol>
         </nav>
 
-        <div class="row g-4">
+        <div class="row g-4 align-items-start product-main-row">
             <!-- LEFT: Imagens -->
-            <div class="col-md-5">
-                <div class="product-gallery card border-0 shadow-sm">
+            <div class="col-12 col-md-5 mb-3 mb-md-0">
+                <div class="product-gallery card border-0 shadow-sm h-100">
                     <div class="product-main-image text-center p-3">
                         <img id="product-main-img" src="" alt="" class="img-fluid">
                     </div>
@@ -193,7 +194,7 @@
             </div>
 
             <!-- RIGHT: Infos -->
-            <div class="col-md-7">
+            <div class="col-12 col-md-7">
                 <section class="product-info card border-0 shadow-sm p-3 p-md-4">
                     <h1 id="product-title" class="product-title h4 mb-2"></h1>
 
@@ -204,7 +205,7 @@
                     </div>
 
                     <!-- Quantidade + botões -->
-                    <div class="d-flex flex-wrap align-items-center gap-3 mb-3">
+                    <div class="product-actions d-flex flex-wrap align-items-center gap-3 mb-3">
                         <div class="d-flex align-items-center gap-2">
                             <label class="fw-semibold" for="qty">Qtd:</label>
                             <input type="number" id="qty" min="1" value="1"
@@ -235,7 +236,7 @@
         </section>
     </main>
 
-    <!-- ========== FOOTER (igual ao index, só ajustando paths) ========== -->
+    <!-- ========== FOOTER ========== -->
     <footer class="container-fluid py-4">
         <div class="container text-center text-white">
             <div class="row justify-content-center mb-4">
