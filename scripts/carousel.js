@@ -9,16 +9,16 @@ document.addEventListener("DOMContentLoaded", () => {
 	let isAppending = false; // trava pra não disparar várias vezes seguidas
 
 	function mdc(a, b) {
-        return b === 0 ? a : mdc(b, a % b);
-    }
+		return b === 0 ? a : mdc(b, a % b);
+	}
 
-    function mmc(a, b) {
-        return (a * b) / mdc(a, b);
-    }
+	function mmc(a, b) {
+		return (a * b) / mdc(a, b);
+	}
 
-    function mmcArray(arr) {
-        return arr.reduce((acc, val) => mmc(acc, val));
-    }
+	function mmcArray(arr) {
+		return arr.reduce((acc, val) => mmc(acc, val));
+	}
 
 	// 🔹 Achata o JSON: categories -> subcategories -> products
 	function getAllProducts(data) {
@@ -68,7 +68,14 @@ document.addEventListener("DOMContentLoaded", () => {
         </button>
     `;
 
-	
+		const btn = card.querySelector(".buy-btn");
+
+		// só adiciona o evento se o botão existir e addToCart estiver definido
+		if (btn && typeof addToCart === "function") {
+			btn.addEventListener("click", () => {
+				addToCart(product);
+			});
+		}
 
 		return card;
 	}
@@ -104,49 +111,47 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
-function renderRandomProductsGrid(allProducts) {
-        const grid = document.getElementById("random-products-grid");
-        if (!grid) return;
+	function renderRandomProductsGrid(allProducts) {
+		const grid = document.getElementById("random-products-grid");
+		if (!grid) return;
 
-        const shuffled = shuffleArray(allProducts);
+		const shuffled = shuffleArray(allProducts);
 
-        const total = shuffled.length;
+		const total = shuffled.length;
 
-        const hardLimit = Math.min(20, total);
+		const hardLimit = Math.min(20, total);
 
-        // quantos cabem por linha em cada breakpoint
-        const perRow = [2, 3, 4]; // col-6, col-md-4, col-lg-3
+		// quantos cabem por linha em cada breakpoint
+		const perRow = [2, 3, 4]; // col-6, col-md-4, col-lg-3
 
-        // MMC desses valores (2,3,4) => 12
-        const idealGroup = mmcArray(perRow);
+		// MMC desses valores (2,3,4) => 12
+		const idealGroup = mmcArray(perRow);
 
-        let count = Math.floor(hardLimit / idealGroup) * idealGroup;
+		let count = Math.floor(hardLimit / idealGroup) * idealGroup;
 
-        if (count === 0) {
-            const desktopCols = perRow[perRow.length - 1]; // 4
-            count = Math.floor(hardLimit / desktopCols) * desktopCols;
-        }
+		if (count === 0) {
+			const desktopCols = perRow[perRow.length - 1]; // 4
+			count = Math.floor(hardLimit / desktopCols) * desktopCols;
+		}
 
-        if (count === 0) {
-            count = hardLimit;
-        }
+		if (count === 0) {
+			count = hardLimit;
+		}
 
-        const selectedProducts = shuffled.slice(0, count);
+		const selectedProducts = shuffled.slice(0, count);
 
-        grid.innerHTML = "";
+		grid.innerHTML = "";
 
-        selectedProducts.forEach((product) => {
-            const col = document.createElement("div");
-            col.className = "col-6 col-md-4 col-lg-3";
+		selectedProducts.forEach((product) => {
+			const col = document.createElement("div");
+			col.className = "col-6 col-md-4 col-lg-3";
 
-            const card = createProductCard(product, "product-card-grid");
-            col.appendChild(card);
+			const card = createProductCard(product, "product-card-grid");
+			col.appendChild(card);
 
-            grid.appendChild(col);
-        });
-    }
-
-
+			grid.appendChild(col);
+		});
+	}
 
 	// Carrega o JSON de produtos
 	fetch(json)
