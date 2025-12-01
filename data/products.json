@@ -124,7 +124,7 @@
 				"products": [
 					{
 						"id": "watercooler_120mm",
-						"name": "Water Cooler 120x120mm Snapps",
+						"name": "Water Cooler 120x120mm",
 						"price": 149.9,
 						"img": "./assets/Products/watercooler120.jpg",
 						"alt": "Water Cooler 120mm",
