@@ -136,7 +136,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 		buyBtn.addEventListener("click", (e) => {
 			e.preventDefault();
 			addToCart(product);
-			showAlert(`"${product.name}" foi adicionado ao carrinho!`, "success");
 		});
 
 		col.appendChild(card);
