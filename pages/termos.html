@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termos de Serviço - Snapps</title>
+
+    <!-- Bootstrap / Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="shortcut icon" href="../assets/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <!-- ALERTAS -->
+    <div id="alert-container" class="position-fixed top-0 end-0 p-3"
+        style="z-index: 900; width: 320px; pointer-events: none;"></div>
+
+    <!-- HEADER (igual a outras páginas) -->
+    <header class="container-fluid" id="v-navbar">
+        <nav class="navbar navbar-expand-lg navbar-snapps px-2">
+            <button class="btn btn-menu d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                <i class="navbar-toggler-icon"></i>
+            </button>
+
+            <a href="../index.html" class="navbar-brand mx-2">
+                <img id="logo" src="../assets/snapps_logo.png" alt="Logo">
+            </a>
+
+            <form class="search-bar d-flex mx-3 flex-grow-1">
+                <input class="form-control search-input" type="text"
+                    placeholder="Encontre tudo o que precisa na Snapps, online e na loja.">
+                <button class="btn btn-search" type="button">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
+
+            <button class="btn cart-btn d-flex flex-column align-items-center position-relative cart-btn-trigger"
+                type="button">
+                <div class="position-relative">
+                    <i class="fa fa-shopping-cart cart-icon"></i>
+                    <span class="cart-badge cart-count d-none">0</span>
+                </div>
+                <span class="cart-price cart-price-text small mt-1">R$ 0,00</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- MENU MOBILE -->
+    <div class="offcanvas offcanvas-start offcanvas-lg" tabindex="-1" id="demo">
+        <div class="offcanvas-header d-flex align-items-center">
+            <img id="logo" src="../assets/snapps_logo.png" alt="Logo">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item menu-item">
+                    <a class="menu-link" data-bs-toggle="collapse" href="#subEletro">Eletrodomésticos</a>
+                </li>
+
+                <li class="list-group-item menu-item">
+                    <a class="menu-link" data-bs-toggle="collapse" href="#subCel">Celular & Smartphone</a>
+                </li>
+
+                <li class="list-group-item menu-item">
+                    <a class="menu-link" data-bs-toggle="collapse" href="#subHard">Hardware</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- OFFCANVAS CARRINHO -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Seu carrinho</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <div class="cart-items-list mb-3"></div>
+
+            <div class="mt-auto border-top pt-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="fw-semibold">Total:</span>
+                    <span class="fw-bold cart-total-value">R$ 0,00</span>
+                </div>
+                <button class="btn btn-primary w-100" onclick="window.location.href='./checkout.html'">
+                    Finalizar compra
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== CONTEÚDO PRINCIPAL ========== -->
+    <main class="container my-5">
+        <div class="card shadow-sm p-4">
+            <h1 class="mb-4 text-snapps-primary">Termos de Serviço</h1>
+
+            <p>Bem-vindo(a) à Snapps! Ao utilizar nosso site, você concorda com estes Termos de Serviço, nossa Política
+                de Privacidade e todas as diretrizes descritas abaixo.</p>
+
+            <h3 class="mt-4">1. Aceitação dos Termos</h3>
+            <p>Ao acessar, navegar ou realizar compras no site Snapps, você concorda automaticamente com estes Termos de
+                Serviço. Caso não concorde com algum ponto, recomendamos que interrompa o uso da plataforma.</p>
+
+            <h3 class="mt-4">2. Informações dos Produtos</h3>
+            <p>Buscamos manter todas as informações sobre produtos atualizadas e precisas. Entretanto, erros de preço,
+                descrição ou disponibilidade podem ocorrer. Caso isso aconteça, entraremos em contato antes de finalizar
+                o pedido.</p>
+
+            <h3 class="mt-4">3. Preços e Pagamentos</h3>
+            <p>Os preços podem ser alterados sem aviso prévio. Os pagamentos são processados de forma totalmente segura
+                por intermediadores confiáveis, seguindo padrões de criptografia e proteção de dados.</p>
+
+            <h3 class="mt-4">4. Envios e Prazos</h3>
+            <p>Os prazos estimados de entrega são exibidos no momento da compra com base no CEP informado. Eventuais
+                atrasos podem ocorrer devido a fatores externos (logística, clima, feriados etc.).</p>
+
+            <h3 class="mt-4">5. Garantia e Trocas</h3>
+            <p>Todos os produtos vendidos possuem garantia legal. Para trocas e devoluções, o cliente deve entrar em
+                contato com nosso suporte, conforme o Código de Defesa do Consumidor.</p>
+
+            <hr class="my-4">
+
+            <h2 class="mt-4 text-snapps-primary">LGPD — Lei Geral de Proteção de Dados</h2>
+
+            <h3 class="mt-4">6. Tratamento de Dados Pessoais</h3>
+            <p>A Snapps trata dados pessoais de acordo com a LGPD (Lei nº 13.709/2018). Coletamos apenas informações
+                necessárias para funcionamento da plataforma, tais como:</p>
+
+            <ul>
+                <li>Nome e e-mail (para cadastro e comunicação);</li>
+                <li>Endereço e CEP (para cálculo de frete e entrega);</li>
+                <li>Histórico de compras (para suporte e garantias);</li>
+                <li>Dados de navegação (cookies, dados anônimos de uso e preferências).</li>
+            </ul>
+
+            <h3 class="mt-4">7. Finalidades da Coleta</h3>
+            <p>Os dados são utilizados exclusivamente para:</p>
+
+            <ul>
+                <li>Realizar entregas e processar pedidos;</li>
+                <li>Gerenciar o carrinho de compras;</li>
+                <li>Melhorar a experiência de navegação;</li>
+                <li>Comunicação sobre pedidos e suporte;</li>
+                <li>Segurança, prevenção a fraudes e análises internas.</li>
+            </ul>
+
+            <h3 class="mt-4">8. Base Legal Utilizada</h3>
+            <p>O tratamento de dados é realizado com base em:</p>
+
+            <ul>
+                <li><b>Consentimento</b> — ao usar nosso site, realizar cadastro ou aceitar cookies;</li>
+                <li><b>Execução de contrato</b> — quando você realiza uma compra e precisamos processar seu pedido;</li>
+                <li><b>Legítimo interesse</b> — para melhorar o funcionamento da loja e exibir produtos relevantes;</li>
+                <li><b>Obrigação legal</b> — armazenamento fiscal e emissão de comprovantes.</li>
+            </ul>
+
+            <h3 class="mt-4">9. Direitos do Titular</h3>
+            <p>Você pode, a qualquer momento, exercer seus direitos garantidos pela LGPD:</p>
+
+            <ul>
+                <li>Confirmar a existência de tratamento de dados;</li>
+                <li>Solicitar acesso, correção ou exclusão de informações;</li>
+                <li>Solicitar portabilidade dos dados;</li>
+                <li>Revogar consentimento;</li>
+                <li>Obter informações sobre compartilhamento de dados.</li>
+            </ul>
+
+            <p>Para exercer seus direitos, entre em contato através da página <a href="./contato.html">Contato</a>.</p>
+
+            <hr class="my-4">
+
+            <h2 class="mt-4 text-snapps-primary">Cookies</h2>
+
+            <h3 class="mt-3">10. Uso de Cookies</h3>
+            <p>A Snapps utiliza cookies para garantir o funcionamento adequado do site e melhorar sua experiência.</p>
+
+            <h4 class="mt-3">Tipos de cookies utilizados:</h4>
+            <ul>
+                <li><b>Cookies essenciais</b>: necessários para o funcionamento da loja (ex: carrinho, login, sessão).
+                </li>
+                <li><b>Cookies de desempenho</b>: coletam dados anônimos para melhorar o site.</li>
+                <li><b>Cookies de preferências</b>: guardam configurações como idioma ou itens recentes.</li>
+            </ul>
+
+            <p>Em especial, utilizamos cookies para:</p>
+
+            <ul>
+                <li>Manter itens no carrinho mesmo que a página seja atualizada;</li>
+                <li>Lembrar preferências de navegação;</li>
+                <li>Reduzir carregamento repetitivo de dados;</li>
+                <li>Exibir produtos relacionados.</li>
+            </ul>
+
+            <p>Você pode limpar ou bloquear cookies a qualquer momento pelo navegador, mas algumas funções podem parar
+                de funcionar (como o carrinho).</p>
+
+            <hr class="my-4">
+
+            <h3>11. Atualizações dos Termos</h3>
+            <p>A Snapps pode atualizar estes termos periodicamente. A versão mais recente sempre será exibida nesta
+                página.</p>
+
+            <h3>12. Contato</h3>
+            <p>Para dúvidas sobre dados pessoais, privacidade ou termos gerais, entre em contato pela página <a
+                    href="./contato.html">Contato</a>.</p>
+
+            <p class="mt-4 fw-semibold">Última atualização: Janeiro de 2025.</p>
+        </div>
+    </main>
+
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="container-fluid py-4">
+        <div class="container text-center text-white">
+            <div class="row justify-content-center mb-4">
+                <div class="col-12 mb-3">
+                    <img src="../assets/snapps_logo.png" alt="Logo Snapps" style="height: 55px;">
+                </div>
+
+                <div class="col-12">
+                    <ul class="list-unstyled d-flex flex-wrap justify-content-center gap-4 fs-5">
+                        <li><a href="../index.html" class="text-white text-decoration-none">Início</a></li>
+                        <li><a href="./sobre.html" class="text-white text-decoration-none">Sobre</a></li>
+                        <li><a href="./contato.html" class="text-white text-decoration-none">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 mt-3">
+                    <div class="d-flex justify-content-center gap-4 fs-3">
+                        <a href="https://linktr.ee/Snapps1?utm_source=qr_code" target="_blank" class="text-white"><i
+                                class="fa fa-linkedin"></i></a>
+                        <a href="#" class="text-white"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="text-white"><i class="fa fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fa fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-12 mt-3">
+                    <a href="./termos.html" class="text-white text-decoration-none fs-6">Termos de Serviço</a>
+                </div>
+            </div>
+
+            <hr class="border-light">
+            <p class="mt-3 mb-0">© 2025 Snapps — Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../scripts/cart.js"></script>
+
+</body>
+
+</html>
